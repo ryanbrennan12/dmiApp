@@ -3,6 +3,7 @@
  - [1.2. To do](#12-to-do)
  - [1.3. Usage](#13-usage)
  - [1.4. Log](#14-log)
+  - [1.4.1 React-Boilerplate basic setup](#151-React-Boilerplate-basic-setup)
 
 
 ## 1.2. To do
@@ -36,6 +37,14 @@ To Come
 
 
 ## 1.4. Log
+  - As outlined in the development setup, we are using React BoilerPlate (link here)
+  - Run `npm run clean` to delete the example app.
 
-  - [1.4.1 React basic setup](#151-react-basic-setup)
+  - Start in `containers/App/HomePage/index.js`
+  - Staying true the [container/component architecture](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.4rmjqneiw), I created `reducer.js` files within each container folder
+
+  - entry point `app/app.js`
+  - `containers/App/index.js` is where we are exporting app
+
+
 
