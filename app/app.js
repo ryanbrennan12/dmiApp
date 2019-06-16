@@ -7,6 +7,8 @@ import { createStore } from 'redux';
 import toDoAppReducer from './containers/AddToDo/reducers.js';
 import App from './containers/App/index.js';
 
+
+
 const store = createStore(toDoAppReducer);
 
 render(
@@ -15,5 +17,6 @@ render(
   </Provider>,
   document.getElementById('app')
 );
+
 
 
