@@ -1,10 +1,10 @@
-import { ADD_TODO } from '../actions';
+import { ADD_TODO } from './actions';
 
 const initialState = {
   toDoList: []
 };
 
-export default function toDoApp(state = initialState, action) {
+export default function toDoAppReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO:
       let newToDoList = [

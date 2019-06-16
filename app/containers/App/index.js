@@ -1,11 +1,4 @@
-/**
- *
- * App.js
- *
- * This component is the skeleton around the actual pages, and should only
- * contain code that should be seen on all pages. (e.g. navigation bar)
- *
- */
+//Our App.js
 
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
@@ -16,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 class App extends Component {
   render() {
     return (
-      <Container>
+       <Container>
         <Row className="row">
           <Col xs={12}>
             <h1>My New React Bootstrap SPA</h1>
@@ -29,3 +22,5 @@ class App extends Component {
 }
 
 export default App;
+
+
