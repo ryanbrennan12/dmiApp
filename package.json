@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git://github.com/react-boilerplate/react-boilerplate.git"
   },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  },
   "engines": {
     "npm": ">=5",
     "node": ">=8.15.1"
@@ -81,6 +84,7 @@
     "intl": "1.2.5",
     "invariant": "2.2.4",
     "ip": "1.1.5",
+    "jest": "^24.8.0",
     "lodash": "4.17.11",
     "minimist": "1.2.0",
     "prop-types": "15.7.2",
@@ -125,6 +129,9 @@
     "compression-webpack-plugin": "2.0.0",
     "coveralls": "3.0.3",
     "css-loader": "2.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",

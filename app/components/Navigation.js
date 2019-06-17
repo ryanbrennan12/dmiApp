@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+//I know, very basic:-(
 const NavigationBar = styled.div`
   margin-bottom: 15px;
   background-color: lightgray;
 `;
-
 
 export default () => (
    <NavigationBar>
@@ -18,3 +18,4 @@ export default () => (
     </Link>
     </NavigationBar>
 );
+

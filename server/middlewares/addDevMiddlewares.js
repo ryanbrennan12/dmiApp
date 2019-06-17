@@ -40,10 +40,9 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   app.post('/addtodo', (req, res) => {
     let id = parseInt(req.body.id, 10);
     let title = req.body.data;
-    console.log('body', req.body)
+
 
     results.push({"_id": id, title });
-    console.log('I am persisting!!!', results)
     res.status(200).send('Reconfigure to send to dispatch in axios post');
   })
 
