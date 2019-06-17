@@ -26,6 +26,15 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   // artifacts, we use it instead
   const fs = middleware.fileSystem;
 
+  const strArr = [ { "_id": 123, "title": "Do neat " },
+  { "_id": 456, "title": "Watch Netflix" }]
+
+  app.get('/api/onmount', (req, res) => {
+
+    res.send(strArr)
+  })
+
+
   app.get('*', (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
       if (err) {
