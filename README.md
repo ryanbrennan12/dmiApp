@@ -3,7 +3,7 @@
  - [1.2. To do](#12-to-do)
  - [1.3. Usage](#13-usage)
  - [1.4. Log](#14-log)
-  - [1.4.1 React-Boilerplate basic setup](#151-React-Boilerplate-basic-setup)
+
 
 
 ## 1.2. To do
@@ -37,7 +37,9 @@ DMI App is is a basic ToDo with two endpoints; one to view the list stored on th
 
 **MVP UI**
 
-![upload](https://gfycat.com/ellipticalgenerousarabianwildcat.gif)
+![upload](ui.gif)
+
+
 
 
 ## 1.4. Log
