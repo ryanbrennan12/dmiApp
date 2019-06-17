@@ -29,10 +29,14 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   const strArr = [ { "_id": 123, "title": "Do neat " },
   { "_id": 456, "title": "Watch Netflix" }]
 
-  app.get('/api/onmount', (req, res) => {
+  app.get('/onmount', (req, res) => {
+    res.send(strArr);
+  });
 
-    res.send(strArr)
+  app.post('/addtodo', (req, res) => {
+    console.log('hit the thing')
   })
+
 
 
   app.get('*', (req, res) => {

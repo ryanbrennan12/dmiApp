@@ -14,13 +14,4 @@ const ToDoList = ({ toDoList }) => (
   </Jumbotron>
 );
 
-// ToDoList.propTypes = {
-//   toDoList: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       _id: PropTypes.string.isRequired,
-//       title: PropTypes.string.isRequired
-//     }).isRequired
-//   ).isRequired
-// };
-
 export default ToDoList;

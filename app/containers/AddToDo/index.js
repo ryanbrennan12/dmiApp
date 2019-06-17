@@ -15,6 +15,7 @@ let AddToDo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return;
         }
+        //consider moving this dispatch
         dispatch(addToDo(input.value));
         input.value = '';
       }}
