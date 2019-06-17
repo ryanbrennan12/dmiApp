@@ -11,25 +11,25 @@
  ```
  Server:
 
-  - Utilize a Node / Express server
-  - contain an array of strings
-  - Have one endpoint to fetch all strings
-  - Have one endpoint to prepend a new string to the array
+  [x] Utilize a Node / Express server
+  [x] contain an array of strings
+  [x] Have one endpoint to fetch all strings
+  [x] Have one endpoint to prepend a new string to the array
 
  Client:
 
-  - Have one page to display all strings stored on server.
-  - Have one page with UI to input a string and send to server.
-  - Allow a user to navigate between the two pages.
-  - Not be fully styled, but should be laid out in a meaningful way.
+  [x] Have one page to display all strings stored on server.
+  [x] Have one page with UI to input a string and send to server.
+  [x] Allow a user to navigate between the two pages.
+  [x] Not be fully styled, but should be laid out in a meaningful way.
 
   To include:
-  - React Router
-  - Redux
-  - Redux Saga
-  - Reselect
-  - Styled Components - Use at least one styled component. The component must have a prop passed into the - Styled Component for conditional rendering.
-  - Unit Tests for one container
+  [x] React Router
+  [x] Redux
+  [x] Redux Saga
+  [ ]Reselect
+  [x-] Styled Components - Use at least one styled component. The component must have a prop passed into the - Styled Component for conditional rendering.
+  [x-] Unit Tests for one container
 ```
 
 ## 1.3. Usage
@@ -53,10 +53,6 @@ DMI App is is a basic ToDo with two endpoints; one to view the list stored on th
   was not in the saga
 
 
-
-
-
-
 ## 1.4. Log
   - As outlined in the development setup, we are using React BoilerPlate (link here)
   - Run `npm run clean` to delete the example app.
@@ -68,9 +64,23 @@ DMI App is is a basic ToDo with two endpoints; one to view the list stored on th
   - `containers/App/index.js` is where we are exporting app
   - installed Bootstrap for familiarity with fast styling
 
-  -
+  - Ran into issues getting today simply getting the `GET` request to fire on the express server.  Initially thouhgt it was a React Router problem as it was blanketing all the available endpoints making requests to the server blocked.
+  Turned out to be an express issue, especially my unfamiliarity with the boilerplate's structure, ie the middleware folder.  This is where our staic file was being served.
 
-  <script src=https://gist.github.com/ryanbrennan12/18ea111bfa87211d168f4b809dd4e3bd></script>
+  -Did not end up hitting MVP (Reselect, unfinished test suite) because I allocated too much time to getting this non-functioning saga to handle the `POST` request
+
+  - biggest challenge turned out to be navigating the boilerplate.  I would have asked for more clarifying questions in a production setting, as to what pieces of the boilerplate I could take entirely out and things of that nature.
+
+  -Starting this app completely from scratch using the same unfamiliar libraries and functionality could have been accomplished in a fraction of the time.  As much as I explored the boilerplate before I began, the lesson learned here that a bit more time investigating it  would have been the ticket.
+
+  -Great exercise all together though. Im really excited about digging into Reselect and Sagas that much more and finishing this app.
+
+
+![upload](gist.png)
+
+
+
+
 
 
 
