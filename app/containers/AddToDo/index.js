@@ -8,7 +8,7 @@ import postToDo from '/Users/ryanbrennan/Desktop/repls/dmiapp/app/api.js'
 
 let AddToDo = ({ dispatch }) => {
   let input;
-
+  let id = new Date().getTime().toString();
   return (
     <Form
       onSubmit={e => {
@@ -16,10 +16,12 @@ let AddToDo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return;
         }
-        postToDo(input.value)
-        dispatch(addToDo(input.value));
+        postToDo(input.value, id)
+        dispatch(addToDo(input.value, id));
         input.value = '';
+
       }}
+
     >
       <Form.Group controlId="formBasicEmail">
         <InputGroup>

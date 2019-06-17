@@ -1,11 +1,11 @@
 export const ADD_TODO = 'ADD_TODO';
 import axios from 'axios';
 
-export function addToDo(title) {
+export function addToDo(title, id) {
   return {
     type: ADD_TODO,
     toDoItem: {
-      _id: (new Date().getTime()).toString(),
+      _id: id,
       title
     }
   };

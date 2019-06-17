@@ -30,16 +30,21 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   // artifacts, we use it instead
   const fs = middleware.fileSystem;
     //our "Persisting" data
-  const results = [ { "_id": 123, "title": "I am dummy data" },
-  { "_id": 456, "title": "I'm with him ⬆" }, { "_id": 789, "title": "Delete us from addDevMiddlewares.js ☠️" }]
+  const results = [ { "_id": 123, "title": "I am dummy data 🤗" },
+  { "_id": 456, "title": "I'm with him ⬆" }]
 
   app.get('/onmount', (req, res) => {
     res.send(results);
   });
 
   app.post('/addtodo', (req, res) => {
+    let id = parseInt(req.body.id, 10);
+    let title = req.body.data;
     console.log('body', req.body)
-    res.status(200).send('I am the body', req.body)
+
+    results.push({"_id": id, title });
+    console.log('I am persisting!!!', results)
+    res.status(200).send('Reconfigure to send to dispatch in axios post');
   })
 
   app.get('*', (req, res) => {
