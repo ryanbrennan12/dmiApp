@@ -1,13 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const NavigationBar = styled.div`
+  margin-bottom: 15px;
+  background-color: lightgray;
+`;
+
 
 export default () => (
-  <div>
+   <NavigationBar>
     <Link className="btn btn-primary" to="/">
-      Awesome List
+      Home/List 🏡
     </Link>
     <Link className="btn btn-secondary" to="/new-item">
-      + Add New Thing;-)
+      + Add New Thing 🚀
     </Link>
-  </div>
+    </NavigationBar>
 );
