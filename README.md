@@ -2,7 +2,8 @@
 
  - [1.2. To do](#12-to-do)
  - [1.3. Usage](#13-usage)
-  - [1.3.1. API endpoints](#131-api-endpoints)
+  - [1.3.1. Development Setup](#131-development-setup)
+  - [1.3.2. API endpoints](#132-api-endpoints)
  - [1.4. Log](#14-log)
 
 
@@ -40,7 +41,19 @@ DMI App is is a basic ToDo with two endpoints; one to view the list stored on th
 
 ![upload](ui.gif)
 
-###  1.3.1 API Endpoints
+## 1.3.1 Development Setup
+
+```sh
+# install npm dependencies
+$> cd /dmiapp
+$> npm install
+
+# start application
+$> npm start
+# Now enjoy;-)
+```
+
+###  1.3.2 API Endpoints
 
 + GET `/onmount`
   - in place of of an AJAX call inside of ComponentDidMount, this GET request is
