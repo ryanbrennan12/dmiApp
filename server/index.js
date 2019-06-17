@@ -1,7 +1,7 @@
 /* eslint consistent-return:0 import/order:0 */
 
 const express = require('express');
-const logger = require('./logger');
+// const logger = require('./logger');
 
 const argv = require('./argv');
 const port = require('./port');
@@ -12,7 +12,13 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
+
+
+
+
+
 const app = express();
+
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
@@ -30,6 +36,7 @@ const prettyHost = customHost || 'localhost';
 
 // use the gzipped bundle
 app.get('*.js', (req, res, next) => {
+
   req.url = req.url + '.gz'; // eslint-disable-line
   res.set('Content-Encoding', 'gzip');
   next();
@@ -37,20 +44,30 @@ app.get('*.js', (req, res, next) => {
 
 // Start your app.
 app.listen(port, host, async err => {
+  console.log('listening on port ', port)
   if (err) {
     return logger.error(err.message);
   }
 
-  // Connect to ngrok in dev mode
-  if (ngrok) {
-    let url;
-    try {
-      url = await ngrok.connect(port);
-    } catch (e) {
-      return logger.error(e);
-    }
-    logger.appStarted(port, prettyHost, url);
-  } else {
-    logger.appStarted(port, prettyHost);
-  }
+  // // Connect to ngrok in dev mode
+  // if (ngrok) {
+  //   let url;
+  //   try {
+  //     url = await ngrok.connect(port);
+  //   } catch (e) {
+  //     return logger.error(e);
+  //   }
+  //   logger.appStarted(port, prettyHost, url);
+  // } else {
+  //   logger.appStarted(port, prettyHost);
+  // }
 });
+
+const strArr = [ { "_id": 123, "title": "Bua" },
+{ "_id": 456, "title": "Watch Netflix" }]
+
+app.get('/', (req, res) => {
+  console.log(req)
+
+})
+
