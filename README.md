@@ -82,6 +82,9 @@ $> npm start
 
   -Did not end up hitting MVP (Reselect, unfinished test suite) because I allocated too much time to getting this non-functioning saga to handle the `POST` request
 
+![upload](gist.png)
+https://gist.github.com/ryanbrennan12/18ea111bfa87211d168f4b809dd4e3bd
+
   - biggest challenge turned out to be navigating the boilerplate.  I would have asked for more clarifying questions in a production setting, as to what pieces of the boilerplate I could take entirely out and things of that nature.
 
   -Starting this app completely from scratch using the same unfamiliar libraries and functionality could have been accomplished in a fraction of the time.  As much as I explored the boilerplate before I began, the lesson learned here that a bit more time investigating it  would have been the ticket.
@@ -89,7 +92,6 @@ $> npm start
   -Great exercise all together though. Im really excited about digging into Reselect and Sagas that much more and finishing this app.
 
 
-![upload](gist.png)
 
 
 
