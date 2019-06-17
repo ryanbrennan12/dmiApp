@@ -13,6 +13,7 @@ function createWebpackMiddleware(compiler, publicPath) {
 }
 
 module.exports = function addDevMiddlewares(app, webpackConfig) {
+  const bodyParser = require('body-parser');
   const compiler = webpack(webpackConfig);
   const middleware = createWebpackMiddleware(
     compiler,
@@ -21,6 +22,9 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
 
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+
 
   // Since webpackDevMiddleware uses memory-fs internally to store build
   // artifacts, we use it instead
@@ -34,7 +38,8 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   });
 
   app.post('/addtodo', (req, res) => {
-    console.log('hit the thing')
+    console.log('body', req.body)
+    res.send('hey thanks')
   })
 
 

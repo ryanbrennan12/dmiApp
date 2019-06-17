@@ -1,7 +1,7 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects';
 import { LOAD_TODO_LIST, RENDER_TODO_LIST } from '/Users/ryanbrennan/Desktop/repls/dmiapp/app/containers/ToDoListContainer/actions.js';
 import { ADD_TODO } from '/Users/ryanbrennan/Desktop/repls/dmiapp/app/containers/AddToDo/actions.js';
-const urlPost = 'http://localhost:3000/addtodo'
+
 
 
 export function* fetchToDoList() {
@@ -19,9 +19,27 @@ export function* loadToDoList() {
 //triggered by the addToDo (saga)
 //A saga to listens for ADD_TODO (ACTIONS)
 //will trigger our post request
-export function* postToDo() {
-  yield takeEvery(ADD_TODO, addTodo);
+// export function* postToDo() {
+//   yield takeEvery(ADD_TODO, addTodo);
+// }
+function* insertToDo(item) {
+  const postUrl = 'http://localhost:3000/addtodo'
+  const response = yield fetch(postUrl, {
+    method: 'POST',
+    headers: {
+      Acccept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    //TEST INPUT
+    body: JSON.stringify({
+      _id: item.id,
+      name: item.name
+    })
+  });
+  console.log(`response = ${JSON.stringify(response)}`);
+  return yield(response.status === 201);
 }
+
 
 // export function* addTodo() {
 //   const endpoint = 'http://localhost:3000/onmount';
@@ -33,4 +51,8 @@ export function* postToDo() {
 
 export default function* rootSaga() {
   yield all([loadToDoList()]);
+}
+
+export const Api = {
+  insertToDo
 }
