@@ -13,6 +13,7 @@ export default function toDoApp(state = initialState, action) {
         toDoList: action.toDoList
       };
       case ADD_TODO:
+      //just adding it to state
       let newToDoList = [...state.toDoList,{ ...action.toDoItem}];
       return {
         ...state,

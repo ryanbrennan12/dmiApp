@@ -5,6 +5,25 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
+export function* insertToDo(item) {
+  const postUrl = 'http://localhost:3000/addtodo'
+  const response = yield fetch(postUrl, {
+    method: 'POST',
+    headers: {
+      Acccept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    //TEST INPUT
+    body: JSON.stringify({
+      _id: item.id,
+      name: item.name
+    })
+  });
+  yield put({ type: ADD_TODO, toDoList: data });
+  console.log(`response = ${JSON.stringify(response)}`);
+  return yield(response.status === 201);
+}
+
 let AddToDo = ({ dispatch }) => {
   let input;
 
@@ -15,7 +34,7 @@ let AddToDo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return;
         }
-        //consider moving this dispatch
+        //consider moviing this di
         dispatch(addToDo(input.value));
         input.value = '';
       }}

@@ -29,12 +29,12 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   // Since webpackDevMiddleware uses memory-fs internally to store build
   // artifacts, we use it instead
   const fs = middleware.fileSystem;
-
-  const strArr = [ { "_id": 123, "title": "Do neat " },
-  { "_id": 456, "title": "Watch Netflix" }]
+    //our "Persisting" data
+  const results = [ { "_id": 123, "title": "I am dummy data" },
+  { "_id": 456, "title": "I'm with him ⬆" }, { "_id": 789, "title": "Delete us from addDevMiddlewares.js ☠️" }]
 
   app.get('/onmount', (req, res) => {
-    res.send(strArr);
+    res.send(results);
   });
 
   app.post('/addtodo', (req, res) => {
