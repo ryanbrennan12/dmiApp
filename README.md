@@ -33,7 +33,11 @@
 
 ## 1.3. Usage
 
-To Come
+DMI App is is a basic ToDo with two endpoints; one to view the list stored on the server.  And another endpoint to add a ToDo to the list.  Delete coming soon...stay tuned
+
+**MVP UI**
+
+![upload](https://gfycat.com/ellipticalgenerousarabianwildcat.gif)
 
 
 ## 1.4. Log
@@ -45,6 +49,7 @@ To Come
 
   - entry point `app/app.js`
   - `containers/App/index.js` is where we are exporting app
+
 
 
 
