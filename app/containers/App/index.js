@@ -7,7 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 
-import AddToDo from '../AddToDo/index.js';
+import AddToDo from '../AddToDo';
+import ToDoListContainer from '../ToDoListContainer';
 
 class App extends Component {
   render() {
@@ -16,7 +17,8 @@ class App extends Component {
         <Row className="row">
           <Col xs={12}>
             <h1>DMI App</h1>
-            <Button>Look, I'm a button!</Button>
+            <AddToDo />
+            <ToDoListContainer />
           </Col>
         </Row>
       </Container>
