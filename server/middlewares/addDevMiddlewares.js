@@ -39,10 +39,8 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
 
   app.post('/addtodo', (req, res) => {
     console.log('body', req.body)
-    res.send('hey thanks')
+    res.status(200).send('I am the body', req.body)
   })
-
-
 
   app.get('*', (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
@@ -54,3 +52,5 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
     });
   });
 };
+
+

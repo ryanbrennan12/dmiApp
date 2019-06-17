@@ -13,31 +13,29 @@ export function* fetchToDoList() {
 export function* loadToDoList() {
   yield takeEvery(LOAD_TODO_LIST, fetchToDoList);
 }
-//triggered by  insertTodo (saga)
-//A saga to listens for ADD_TODO (ACTIONS)
-//will trigger our post request
+
 export function* postListener() {
   yield takeEvery(ADD_TODO, insertTodo)
 }
+//Not Functioning
+export function* insertToDo(item) {
+  const postUrl = 'http://localhost:3000/addtodo'
+  const response = yield fetch(postUrl, {
+    method: 'POST',
+    headers: {
+      Acccept: 'application/json',
+      'Content-Type': 'application/json'
+    },
 
-// export function* insertToDo(item) {
-//   const postUrl = 'http://localhost:3000/addtodo'
-//   const response = yield fetch(postUrl, {
-//     method: 'POST',
-//     headers: {
-//       Acccept: 'application/json',
-//       'Content-Type': 'application/json'
-//     },
-//     //TEST INPUT
-//     body: JSON.stringify({
-//       _id: item.id,
-//       name: item.name
-//     })
-//   });
-//   yield put({ type: ADD_TODO, toDoList: data });
-//   console.log(`response = ${JSON.stringify(response)}`);
-//   return yield(response.status === 201);
-// }
+    body: JSON.stringify({
+      _id: item.id,
+      name: item.name
+    })
+  });
+  yield put({ type: ADD_TODO, toDoList: data });
+  console.log(`response = ${JSON.stringify(response)}`);
+  return yield(response.status === 201);
+}
 
 export default function* rootSaga() {
   yield all([loadToDoList()]);
